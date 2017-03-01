@@ -15,7 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AlterarUsuario" />
+        <activity android:name=".AlterarSenha" />
         <activity android:name=".MainActivity" />
         <activity android:name=".CadastrarUsuario"></activity>
     </application>
