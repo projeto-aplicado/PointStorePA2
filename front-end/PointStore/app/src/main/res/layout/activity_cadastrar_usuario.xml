@@ -24,59 +24,6 @@
         />
 
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="3"
-        android:layout_marginTop="5dp"
-        android:id="@+id/editTextNome"
-        android:hint="Nome"
-        android:layout_below="@+id/textViewTituloLogin"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
-
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:layout_marginTop="90dp"
-        android:id="@+id/editTextSobrenome"
-        android:hint="Sobrenome"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:layout_marginTop="150dp"
-        android:id="@+id/editTextCadEmail"
-        android:hint="Email"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:layout_marginTop="220dp"
-        android:id="@+id/editTextCadUsuario"
-        android:hint="Usuario"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:layout_marginTop="290dp"
-        android:id="@+id/editTextCadSenha"
-        android:hint="Senha"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
-
     <Button
         android:text="Cadastrar"
         android:layout_width="wrap_content"
@@ -87,6 +34,62 @@
         android:layout_alignParentStart="true"
         android:textColorHint="@color/colorPrimary"
         android:backgroundTint="@color/colorPrimaryDark"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="3"
+        android:layout_marginTop="37dp"
+        android:id="@+id/editTextNome"
+        android:hint="Nome"
+        android:layout_below="@+id/textViewTituloLogin"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textWebEmailAddress"
+        android:id="@+id/editTextCadEmail"
+        android:hint="Email"
+        android:layout_below="@+id/editTextSobrenome"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:id="@+id/editTextSobrenome"
+        android:hint="Sobrenome"
+        android:layout_below="@+id/editTextNome"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/editTextCadSenha"
+        android:hint="Senha"
+        android:layout_below="@+id/editTextCadEmail"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="73dp"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:id="@+id/editTextCadUsuario"
+        android:hint="Usuario"
+        android:layout_below="@+id/editTextCadEmail"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
         android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
