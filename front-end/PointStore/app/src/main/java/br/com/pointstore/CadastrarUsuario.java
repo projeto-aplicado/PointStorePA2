@@ -1,7 +1,9 @@
-package com.example.fabriciomelo.pointstore;
+package br.com.pointstore;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import br.com.pointstore.R;
 
 public class CadastrarUsuario extends AppCompatActivity {
 

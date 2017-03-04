@@ -1,11 +1,12 @@
-package com.example.fabriciomelo.pointstore;
+package br.com.pointstore;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import br.com.pointstore.R;
 
 public class AlterarSenha extends AppCompatActivity {
 
