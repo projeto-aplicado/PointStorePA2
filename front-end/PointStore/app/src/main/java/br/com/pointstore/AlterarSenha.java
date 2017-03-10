@@ -33,6 +33,7 @@ public class AlterarSenha extends AppCompatActivity {
         if ((editTextSenhaAtual.getText().length() <= 0) || (editTextNovaSenha.getText().length() <= 0) || editTextConfirmarNovaSenha.getText().length() <= 0){
             Toast toast = Toast.makeText(getApplicationContext(), "Campos Vazios", Toast.LENGTH_SHORT);
             toast.show();
+            editTextSenhaAtual.setError("erro");
 
         } else if (editTextNovaSenha.getText().toString() != editTextConfirmarNovaSenha.getText().toString()){
             Toast toast = Toast.makeText(getApplicationContext(), "Senhas não conferem", Toast.LENGTH_SHORT);
