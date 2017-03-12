@@ -1,4 +1,4 @@
-package br.com.pointstore;
+package br.com.pointstore.util;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.pointstore.R;
+import rest.UsuarioService;
+import retrofit2.Retrofit;
+import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class CadastrarUsuario extends AppCompatActivity {
 
@@ -16,11 +19,22 @@ public class CadastrarUsuario extends AppCompatActivity {
     private EditText editTextCadSenha;
     private EditText editTextCadUsuario;
 
+    private UsuarioService mUsuarioService;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar_usuario);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://10.0.2.2:8080/")
+                .addConverterFactory(JacksonConverterFactory.create())
+                .build();
+
+        mUsuarioService = retrofit.create(UsuarioService.class);
+
 
         editTextNome = (EditText) findViewById(R.id. editTextNome);
         editTextCadEmail = (EditText) findViewById(R.id.editTextCadEmail);

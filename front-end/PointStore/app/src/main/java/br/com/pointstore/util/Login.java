@@ -1,4 +1,4 @@
-package br.com.pointstore;
+package br.com.pointstore.util;
 
 import android.content.Intent;
 import android.os.Bundle;

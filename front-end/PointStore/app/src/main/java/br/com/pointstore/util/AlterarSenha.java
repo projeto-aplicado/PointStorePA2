@@ -1,4 +1,4 @@
-package br.com.pointstore;
+package br.com.pointstore.util;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -40,7 +40,7 @@ public class AlterarSenha extends AppCompatActivity {
             toast.show();
         } else{
 
-            //back
+                //back
         }
     }
 
