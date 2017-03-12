@@ -1,5 +1,7 @@
 package rest;
 
+import java.util.List;
+
 import br.com.pointstore.model.Usuario;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -11,6 +13,6 @@ import retrofit2.http.POST;
 
 public interface UsuarioService {
 
-    @POST
-    Call<Usuario> createTask(@Body Usuario usuario);
+    @POST("/PointStoreWeb/app/usuario")
+    Call<Usuario> createUser(@Body Usuario usuario);
 }

@@ -6,8 +6,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
 import br.com.pointstore.R;
+import br.com.pointstore.model.Usuario;
 import rest.UsuarioService;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
@@ -54,7 +60,10 @@ public class CadastrarUsuario extends AppCompatActivity {
 
         } else {
 
-            //back
+            final Usuario usuario = new Usuario("Fabricio", "Melo","123","123","email","fabricio","123");
+
+            Call<Usuario> userCall = mUsuarioService.createUser(usuario);
+
         }
     }
 }
