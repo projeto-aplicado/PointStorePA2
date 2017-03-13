@@ -13,6 +13,6 @@ import retrofit2.http.POST;
 
 public interface UsuarioService {
 
-    @POST("/PointStoreWeb/app/usuario")
+    @POST("/PointStoreWeb/rest/usuario")
     Call<Usuario> createUser(@Body Usuario usuario);
 }
