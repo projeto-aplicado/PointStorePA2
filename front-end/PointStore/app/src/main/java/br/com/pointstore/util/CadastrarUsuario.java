@@ -24,11 +24,8 @@ public class CadastrarUsuario extends AppCompatActivity {
     private EditText editTextSobrenome;
     private EditText editTextCadSenha;
     private EditText editTextCadUsuario;
-
     private UsuarioService mUsuarioService;
     private Usuario usuario;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +33,12 @@ public class CadastrarUsuario extends AppCompatActivity {
         setContentView(R.layout.activity_cadastrar_usuario);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://localhost:8080/")
+                .baseUrl("http://10.0.2.2:8080/")
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
 
         mUsuarioService = retrofit.create(UsuarioService.class);
-        usuario = new Usuario("Fabricio", "Melo","123","123","email","fabricio","123");
+        usuario = new Usuario(1,"Fabricio","Melo","fabricio_email","fabricio","123");
 
 
         editTextNome = (EditText) findViewById(R.id. editTextNome);
@@ -66,6 +63,17 @@ public class CadastrarUsuario extends AppCompatActivity {
             //toast.show();
 
             Call<Usuario> userCall = mUsuarioService.createUser(usuario);
+            userCall.enqueue(new Callback<Usuario>() {
+                @Override
+                public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+
+                }
+
+                @Override
+                public void onFailure(Call<Usuario> call, Throwable t) {
+
+                }
+            });
         }
     }
 }
