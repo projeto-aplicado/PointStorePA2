@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="br.com.pointstore.util.Login">
+    tools:context="br.com.pointstore.Login">
 
 
 
@@ -47,42 +47,53 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:text="Cadastre-se"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/buttonCadastrar"
-        android:onClick="cadastrarUsuario"
-        android:layout_marginBottom="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textViewTituloLogin"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignStart="@+id/textViewTituloLogin"
+        android:layout_marginBottom="40dp"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="cadastrarUsuario"
+        android:text="Cadastre-se"
+        android:textColor="@android:color/white" />
 
     <Button
-        android:text="Esqueceu sua senha?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/button"
-        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/buttonCadastrar"
         android:layout_centerHorizontal="true"
-        android:onClick="alterarSenha" />
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="alterarSenha"
+        android:text="Esqueceu sua senha?"
+        android:textColor="@android:color/white" />
 
     <Button
-        android:text="Cancelar"
+        android:id="@+id/buttonCancelar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonCancelar"
         android:layout_alignBaseline="@+id/buttonLogin"
         android:layout_alignBottom="@+id/buttonLogin"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="37dp" />
+        android:layout_marginEnd="37dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Cancelar"
+        android:textColor="@android:color/white" />
 
     <Button
-        android:text="Login"
+        android:id="@+id/buttonLogin"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonLogin"
-        android:onClick="logar"
-        android:layout_marginBottom="33dp"
         android:layout_above="@+id/button"
-        android:layout_toStartOf="@+id/buttonCadastrar" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="33dp"
+        android:layout_marginStart="22dp"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="logar"
+        android:text="Login"
+        android:textColor="@android:color/white" />
 </RelativeLayout>
