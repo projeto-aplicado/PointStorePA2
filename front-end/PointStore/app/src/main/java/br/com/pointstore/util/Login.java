@@ -32,21 +32,16 @@ public class Login extends AppCompatActivity {
 
 
         if ((editTextLogin.getText().length() <= 0)) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Login Vazio!", Toast.LENGTH_SHORT);
-            toast.show();
-            editTextLogin.setError("Erro");
+            //Toast toast = Toast.makeText(getApplicationContext(), "Login Vazio!", Toast.LENGTH_SHORT);
+            //toast.show();
+            editTextLogin.setError("Login Vazio!");
 
         }  if ((editTextSenha.getText().length() <= 0)) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Digite a Senha!", Toast.LENGTH_SHORT);
-            toast.show();
-            editTextSenha.setError("Erro");
-        } if
-            ((editTextLogin.getText().length() <= 0 ) || (editTextSenha.getText().length() <= 0 )) {
-                Toast toast = Toast.makeText(getApplicationContext(), "Campos Vazios", Toast.LENGTH_SHORT);
-                toast.show();
-                editTextSenha.setError("erro");
-            }
+            //Toast toast = Toast.makeText(getApplicationContext(), "Digite a Senha!", Toast.LENGTH_SHORT);
+            //toast.show();
+            editTextSenha.setError("Digite a Senha!");
         }
+    }
 
 
 
