@@ -1,11 +1,13 @@
 package br.com.pointstore.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * Created by FabricioMelo on 11/03/2017.
  */
 
 public class Usuario {
-    private Integer id;
+
     private String nome;
     private String sobrenome;
     private String cpf;
@@ -18,22 +20,18 @@ public class Usuario {
 
     }
 
-    public Usuario(Integer id, String nome, String sobrenome, String email, String login, String senha) {
-        this.id = id;
+    public Usuario(String nome, String sobrenome, String credito, String email, String cpf, String login, String senha) {
+
         this.nome = nome;
         this.sobrenome = sobrenome;
+        this.cpf = cpf;
+        this.credito = credito;
         this.email = email;
         this.login = login;
         this.senha = senha;
     }
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;

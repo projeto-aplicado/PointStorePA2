@@ -24,6 +24,7 @@ public class CadastrarUsuario extends AppCompatActivity {
     private EditText editTextSobrenome;
     private EditText editTextCadSenha;
     private EditText editTextCadUsuario;
+
     private UsuarioService mUsuarioService;
     private Usuario usuario;
 
@@ -38,7 +39,6 @@ public class CadastrarUsuario extends AppCompatActivity {
                 .build();
 
         mUsuarioService = retrofit.create(UsuarioService.class);
-        usuario = new Usuario(1,"Fabricio","Melo","fabricio_email","fabricio","123");
 
 
         editTextNome = (EditText) findViewById(R.id. editTextNome);
@@ -46,21 +46,20 @@ public class CadastrarUsuario extends AppCompatActivity {
         editTextSobrenome = (EditText) findViewById(R.id.editTextSobrenome);
         editTextCadSenha = (EditText) findViewById(R.id.editTextCadSenha);
         editTextCadUsuario = (EditText) findViewById (R.id.editTextCadUsuario);
-
     }
 
 
     public void cadastrarUsuario (View v) {
 
-        if ((editTextNome.getText().length() <= 0) || (editTextCadEmail.getText().length() <= 0) ||(editTextSobrenome.getText().length() <= 0)|| (editTextCadSenha.getText().length() <= 0)|| (editTextCadUsuario.getText().length()<=0)){
-            Toast toast = Toast.makeText(getApplicationContext(), "Campos Vazios", Toast.LENGTH_SHORT);
-            toast.show();
+        usuario = new Usuario(editTextNome.getText().toString(),editTextSobrenome.getText().toString(),"3",editTextCadEmail.getText().toString(),"",editTextCadUsuario.getText().toString(),editTextCadSenha.getText().toString());
 
 
-        } else {
+        if ((editTextNome.getText().length() > 0) && (editTextCadEmail.getText().length() > 0) &&
 
-            //Toast toast = Toast.makeText(getApplicationContext(), usuario.getNome(), Toast.LENGTH_SHORT);
-            //toast.show();
+                (editTextSobrenome.getText().length() > 0)&& (editTextCadSenha.getText().length() > 0)&&
+
+                (editTextCadUsuario.getText().length()> 0)){
+
 
             Call<Usuario> userCall = mUsuarioService.createUser(usuario);
             userCall.enqueue(new Callback<Usuario>() {
@@ -74,6 +73,25 @@ public class CadastrarUsuario extends AppCompatActivity {
 
                 }
             });
+
+        } else {
+
+            if (editTextNome.getText().length() <= 0){
+                editTextNome.setError("Campo nome é obrigatório");
+            }
+            if (editTextSobrenome.getText().length() <= 0){
+                editTextSobrenome.setError("Campo sobrenome é obrigatório");
+            }
+            if (editTextCadEmail.getText().length() <= 0){
+                editTextCadEmail.setError("Campo email é obrigatório");
+            }
+            if (editTextCadUsuario.getText().length() <= 0){
+                editTextCadUsuario.setError("Campo usário é obrigatório");
+            }
+            if (editTextCadSenha.getText().length() <= 0){
+                editTextCadSenha.setError("Campo senha é obrigatório");
+            }
+
         }
     }
 }
