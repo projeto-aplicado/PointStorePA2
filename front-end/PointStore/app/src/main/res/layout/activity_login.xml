@@ -53,26 +53,29 @@
         android:id="@+id/buttonCadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textViewTituloLogin"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textViewTituloLogin"
         android:layout_marginBottom="40dp"
         android:background="@color/colorPrimaryDark"
         android:onClick="cadastrarUsuario"
         android:text="Cadastre-se"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonCadastrar"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
         android:background="@color/colorPrimaryDark"
         android:onClick="alterarSenha"
         android:text="Esqueceu sua senha?"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:layout_above="@+id/buttonCadastrar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/buttonCancelar"

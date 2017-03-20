@@ -66,10 +66,12 @@ public class CadastrarUsuario extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<Usuario> call, Response<Usuario> response) {
 
+
                 }
 
                 @Override
                 public void onFailure(Call<Usuario> call, Throwable t) {
+
 
                 }
             });

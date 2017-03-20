@@ -2,6 +2,7 @@ package br.com.pointstore.util;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -12,7 +13,7 @@ public class AlterarSenha extends AppCompatActivity {
 
 
 
-    private EditText editTextSenhaAtual;
+    private EditText editTextEmailAtual;
     private EditText editTextNovaSenha;
     private EditText editTextConfirmarNovaSenha;
 
@@ -22,7 +23,7 @@ public class AlterarSenha extends AppCompatActivity {
         setContentView(R.layout.activity_alterar_senha);
 
 
-        editTextSenhaAtual = (EditText) findViewById(R.id.editTextAlterSenhaAtual);
+        editTextEmailAtual = (EditText) findViewById(R.id.editTextAlterEmailAtual);
         editTextNovaSenha = (EditText) findViewById(R.id.editTextAlterNovaSenha);
         editTextConfirmarNovaSenha = (EditText) findViewById(R.id.editTextAlterConfirmarSenha);
 
@@ -30,18 +31,22 @@ public class AlterarSenha extends AppCompatActivity {
 
     public void atualizarSenha (View v) {
 
-        if ((editTextSenhaAtual.getText().length() <= 0) || (editTextNovaSenha.getText().length() <= 0) || editTextConfirmarNovaSenha.getText().length() <= 0){
-            Toast toast = Toast.makeText(getApplicationContext(), "Campos Vazios", Toast.LENGTH_SHORT);
-            toast.show();
-            editTextSenhaAtual.setError("erro");
 
-        } else if (editTextNovaSenha.getText().toString() != editTextConfirmarNovaSenha.getText().toString()){
-            Toast toast = Toast.makeText(getApplicationContext(), "Senhas não conferem", Toast.LENGTH_SHORT);
-            toast.show();
-        } else{
+        if ((editTextEmailAtual.getText().length() > 0) && (editTextNovaSenha.getText().length() > 0) && (editTextConfirmarNovaSenha.getText().length() > 0) &&
+                ((editTextNovaSenha.getText().toString()).equals(editTextConfirmarNovaSenha.getText().toString())) ) {
 
-                //back
+        } else {
+
+            if (editTextEmailAtual.getText().length() <= 0){
+                editTextEmailAtual.setError("Campo email é obrigatório");
+            }
+
+            if (!(editTextNovaSenha.getText().toString()).equals(editTextConfirmarNovaSenha.getText().toString())) {
+
+                    editTextNovaSenha.setError("Senhas não conferem");
+                    editTextConfirmarNovaSenha.setError("Senhas não conferem");
+            }
+
         }
     }
-
 }
