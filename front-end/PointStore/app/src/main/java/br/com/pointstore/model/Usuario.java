@@ -20,6 +20,11 @@ public class Usuario {
 
     }
 
+    public Usuario(String login, String senha) {
+        this.login = login;
+        this.senha = senha;
+    }
+
     public Usuario(String nome, String sobrenome, String credito, String email, String cpf, String login, String senha) {
 
         this.nome = nome;
@@ -30,8 +35,6 @@ public class Usuario {
         this.login = login;
         this.senha = senha;
     }
-
-
 
     public String getNome() {
         return nome;

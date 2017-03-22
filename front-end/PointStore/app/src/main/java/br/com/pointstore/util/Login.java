@@ -7,9 +7,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Collection;
+
 import br.com.pointstore.R;
+import br.com.pointstore.model.Usuario;
 import rest.LoginService;
 import rest.UsuarioService;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
@@ -19,6 +25,8 @@ public class Login extends AppCompatActivity {
     private EditText editTextLogin;
     private EditText editTextSenha;
     private LoginService mLoginService;
+
+    private Usuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +49,23 @@ public class Login extends AppCompatActivity {
 
 
     public void logar(View v) {
+
+        usuario = new Usuario(editTextLogin.getText().toString(),editTextSenha.getText().toString());
+
+
+        Call<Collection<Usuario>> userCall = mLoginService.logar();
+        userCall.enqueue(new Callback<Collection<Usuario>>() {
+            @Override
+            public void onResponse(Call<Collection<Usuario>> call, Response<Collection<Usuario>> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<Collection<Usuario>> call, Throwable t) {
+
+            }
+        });
+
 
 
         if ((editTextLogin.getText().length() <= 0)) {
