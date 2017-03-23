@@ -30,9 +30,6 @@ public class AlterarSenha extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alterar_senha);
 
-        usuario = new Usuario();
-
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://10.0.2.2:8080/")
                 .addConverterFactory(JacksonConverterFactory.create())
@@ -49,14 +46,15 @@ public class AlterarSenha extends AppCompatActivity {
 
     public void atualizarSenha (View v) {
 
+        usuario = new Usuario();
+
         usuario.setEmail(editTextEmailAtual.getText().toString());
         usuario.setSenha(editTextNovaSenha.getText().toString());
 
         if ((editTextEmailAtual.getText().length() > 0) && (editTextNovaSenha.getText().length() > 0) && (editTextConfirmarNovaSenha.getText().length() > 0) &&
                 ((editTextNovaSenha.getText().toString()).equals(editTextConfirmarNovaSenha.getText().toString())) ) {
 
-            Call<Usuario> userCallAtualizaSenha = mLoginAlterarSenhaService.atualizaSenha(usuario, editTextEmailAtual.getText().toString());
-
+            Call<Usuario> userCallAtualizaSenha = mLoginAlterarSenhaService.atualizaSenha(usuario, usuario.getEmail().toString());
             userCallAtualizaSenha.enqueue(new Callback<Usuario>() {
                 @Override
                 public void onResponse(Call<Usuario> call, Response<Usuario> response) {
@@ -68,6 +66,8 @@ public class AlterarSenha extends AppCompatActivity {
 
                 }
             });
+
+
 
         } else {
 

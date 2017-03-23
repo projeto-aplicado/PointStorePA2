@@ -18,7 +18,7 @@ public interface LoginService {
     @GET("/PointStoreWeb/rest/usuarioLogin")
     Call<Collection<Usuario>> logar();
 
-    @PUT("/PointStoreWeb/rest/usuarioLogin")
+    @PUT("/PointStoreWeb/rest/usuarioLogin/{email}")
     Call<Usuario> atualizaSenha(@Body Usuario usuario, @Path("email") String email);
 
 }

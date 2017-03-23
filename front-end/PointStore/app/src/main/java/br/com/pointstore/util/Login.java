@@ -78,7 +78,6 @@ public class Login extends AppCompatActivity {
                 editTextSenha.setError("Digite a Senha!");
             }
 
-
         }
     }
 
