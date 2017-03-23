@@ -1,5 +1,6 @@
 package br.com.pointstore.util;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -75,6 +76,9 @@ public class CadastrarUsuario extends AppCompatActivity {
 
                 }
             });
+
+            Intent telaDeLogin = new Intent(this, Login.class);
+            startActivity(telaDeLogin);
 
         } else {
 
