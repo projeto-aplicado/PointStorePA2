@@ -23,7 +23,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
-
 public class Login extends AppCompatActivity {
 
     private EditText editTextLogin;
@@ -86,18 +85,12 @@ public class Login extends AppCompatActivity {
 
         }
     }
-
     public void cadastrarUsuario (View v) {
         Intent cadastrarUsuario = new Intent(this, CadastrarUsuario.class);
         startActivity(cadastrarUsuario);
-
     }
     public void alterarSenha (View v) {
         Intent alterarSenha = new Intent(this, AlterarSenha.class);
         startActivity(alterarSenha);
-
     }
-
-
-
 }
