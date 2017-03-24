@@ -23,6 +23,10 @@
         <activity
             android:name=".ListarAnunciosActivity"
             android:label="@string/title_activity_listar_anuncios"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".util.Perfil"
+            android:label="@string/title_activity_perfil"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
