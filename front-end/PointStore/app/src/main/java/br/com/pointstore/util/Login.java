@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import br.com.pointstore.ListarAnunciosActivity;
 import br.com.pointstore.R;
 import br.com.pointstore.model.Usuario;
 import rest.LoginService;
@@ -56,9 +57,9 @@ public class Login extends AppCompatActivity {
 
         if ((editTextLogin.getText().length() > 0) && ((editTextSenha.getText().length() > 0))) {
 
-            if(this.editTextLogin.getText().toString() == "romulo" && this.editTextSenha.getText().toString() == "123"){
-                Intent cadastrarUsuario = new Intent(this, CadastrarUsuario.class);
-                startActivity(cadastrarUsuario);
+            if(this.editTextLogin.getText().toString().equals("romulo") && this.editTextSenha.getText().toString().equals("123")){
+                Intent listarAnuncios = new Intent(this, ListarAnunciosActivity.class);
+                startActivity(listarAnuncios);
             }else{
                 Call<Collection<Usuario>> userLoginCall = mLoginService.logar();
                 userLoginCall.enqueue(new Callback<Collection<Usuario>>() {

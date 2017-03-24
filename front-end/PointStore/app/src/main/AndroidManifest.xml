@@ -2,8 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.pointstore">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -20,7 +19,11 @@
         </activity>
         <activity android:name=".util.AlterarSenha" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".util.CadastrarUsuario"></activity>
+        <activity android:name=".util.CadastrarUsuario" />
+        <activity
+            android:name=".ListarAnunciosActivity"
+            android:label="@string/title_activity_listar_anuncios"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

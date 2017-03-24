@@ -6,4 +6,22 @@
         <item name="colorAccent">#2E8B57</item>
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorPrimary">#00bdc1</item>
+        <item name="colorPrimaryDark">#00888b</item>
+        <item name="colorAccent">#2E8B57</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorPrimary">#00bdc1</item>
+        <item name="colorPrimaryDark">#00888b</item>
+        <item name="colorAccent">#2E8B57</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorPrimary">#00bdc1</item>
+        <item name="colorPrimaryDark">#00888b</item>
+        <item name="colorAccent">#2E8B57</item>
+    </style>
+
 </resources>
