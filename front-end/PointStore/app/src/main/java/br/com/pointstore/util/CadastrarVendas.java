@@ -16,17 +16,17 @@ import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
 /**
- * Created by Juan on 02/04/2017.
+ * Created by Juan on 23/03/2017.
  */
 
-public class CadastrarPontos extends AppCompatActivity {
+public class CadastrarVendas extends AppCompatActivity {
 
     private EditText editTextTipoPontos;
     private EditText editTextQtdPontos;
+    private EditText editTextValorPontos;
 
     private UsuarioService mUsuarioService;
     private Usuario usuario;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,18 +41,16 @@ public class CadastrarPontos extends AppCompatActivity {
         mUsuarioService = retrofit.create(UsuarioService.class);
 
 
-        editTextTipoPontos = (EditText) findViewById(R.id.editTextTipoPonto);
+        editTextTipoPontos = (EditText) findViewById(R.id. editTextTipoPonto);
         editTextQtdPontos = (EditText) findViewById(R.id.editTextQtdPontos);
-
-
+        editTextValorPontos = (EditText) findViewById(R.id.editTextValorPontos);
     }
-
 
     public void cadastrarPontos (View v) {
 
-        //usuario = new Usuario(editTextTipoPontos.getText().toString(),editTextQtdPontos.getText().toString(),"3");
+        //usuario = new Usuario(editTextTipoPontos.getText().toString(),editTextQtdPontos.getText().toString(),"3",editTextValorPontos.getText().toString());
 
-        if ((editTextTipoPontos.getText().length() > 0) && (editTextQtdPontos.getText().length() > 0) ){
+        if ((editTextTipoPontos.getText().length() > 0) && (editTextQtdPontos.getText().length() > 0) && (editTextValorPontos.getText().length() > 0)){
 
             Call<Usuario> userCall = mUsuarioService.createUser(usuario);
             userCall.enqueue(new Callback<Usuario>() {
@@ -72,12 +70,14 @@ public class CadastrarPontos extends AppCompatActivity {
         } else {
 
             if (editTextTipoPontos.getText().length() <= 0){
-                editTextTipoPontos.setError("Insira o Tipo de Ponto!");
+                editTextTipoPontos.setError("Campo Tipo de Pontos é obrigatório");
             }
             if (editTextQtdPontos.getText().length() <= 0 ){
-                editTextQtdPontos.setError("Insira a Quantidade de Pontos!");
+                editTextQtdPontos.setError("Campo Quantidade de Pontos é obrigatório");
             }
-
+            if (editTextValorPontos.getText().length() <= 0 ){
+                editTextValorPontos.setError("Campo Valor de Pontos é obrigatório");
+            }
 
         }
 
