@@ -16,6 +16,7 @@ import android.view.MenuItem;
 
 import br.com.pointstore.util.CadastrarPontos;
 import br.com.pointstore.util.CadastrarUsuario;
+import br.com.pointstore.util.CadastrarVendas;
 import br.com.pointstore.util.CadastroTenhoInteresse;
 import br.com.pointstore.util.Perfil;
 
@@ -95,6 +96,9 @@ public class ListarAnunciosActivity extends AppCompatActivity
         } else if (id == R.id.nav_tenhointeresse) {
             Intent cadastroTenhoInteresse = new Intent(this, CadastroTenhoInteresse.class);
             startActivity(cadastroTenhoInteresse);
+        }else if (id == R.id.nav_cadastrarvendas) {
+            Intent cadastrarVendas = new Intent(this, CadastrarVendas.class);
+            startActivity(cadastrarVendas);
         }
 
 
