@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import br.com.pointstore.R;
@@ -19,7 +20,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
-public class Perfil extends AppCompatActivity {
+public class Perfil extends AppCompatActivity implements View.OnClickListener{
 
     private EditText editTextNome;
     private EditText editTextSobrenome;
@@ -27,6 +28,7 @@ public class Perfil extends AppCompatActivity {
     private EditText editTextCPF;
     private EditText editTextLogin;
     private EditText editTextSenha;
+    private Button btnAtualizar;
     private UsuarioService mUsuarioService;
     private Usuario usuario;
 
@@ -52,7 +54,6 @@ public class Perfil extends AppCompatActivity {
                 .baseUrl("http://10.0.2.2:8080/")
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
-
         this.mUsuarioService = retrofit.create(UsuarioService.class);
 
         this.editTextNome = (EditText) findViewById(R.id.editTextNome);
@@ -62,10 +63,14 @@ public class Perfil extends AppCompatActivity {
         this.editTextLogin = (EditText) findViewById(R.id.editTextAttUsuario);
         this.editTextSenha = (EditText) findViewById(R.id.editTextAttSenha);
 
+        this.btnAtualizar = (Button) findViewById(R.id.buttonAtualizar);
+        this.btnAtualizar.setOnClickListener(this);
+
 
     }
 
-    private void atualizarPerfil(){
+
+    /*private void atualizarPerfil(){
 
         if((this.editTextNome.getText().length() > 0) && (this.editTextSobrenome.getText().length() > 0) &&
 
@@ -112,7 +117,54 @@ public class Perfil extends AppCompatActivity {
             }
         }
 
+    }*/
+
+
+    @Override
+    public void onClick(View v) {
+        if((this.editTextNome.getText().length() > 0) && (this.editTextSobrenome.getText().length() > 0) &&
+
+                (this.editTextEmail.getText().length() > 0)&& (this.editTextCPF.getText().length() > 0)&&
+
+                (this.editTextLogin.getText().length()> 0) && (this.editTextSenha.getText().length() > 0)){
+
+            Call<Usuario> userCall = mUsuarioService.updateUser(this.usuario);
+            userCall.enqueue(new Callback<Usuario>() {
+                @Override
+                public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+
+
+                }
+
+                @Override
+                public void onFailure(Call<Usuario> call, Throwable t) {
+
+
+                }
+            });
+
+            Intent telaDeLogin = new Intent(this, Login.class);
+            startActivity(telaDeLogin);
+
+        }else{
+            if (editTextNome.getText().length() <= 0){
+                editTextNome.setError("Campo nome é obrigatório");
+            }
+            if (editTextSobrenome.getText().length() <= 0){
+                editTextSobrenome.setError("Campo sobrenome é obrigatório");
+            }
+            if (editTextEmail.getText().length() <= 0){
+                editTextEmail.setError("Campo email é obrigatório");
+            }
+            if (editTextCPF.getText().length() <= 0){
+                editTextCPF.setError("Campo cpf é obrigatório");
+            }
+            if (editTextLogin.getText().length() <= 0){
+                editTextLogin.setError("Campo login é obrigatório");
+            }
+            if (editTextSenha.getText().length() <= 0){
+                editTextSenha.setError("Campo senha é obrigatório");
+            }
+        }
     }
-
-
 }
