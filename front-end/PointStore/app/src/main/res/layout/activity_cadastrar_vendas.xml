@@ -34,7 +34,7 @@
         android:onClick="cadastrarVenda"
         android:textColor="#fff"
         android:textColorHint="@color/colorPrimary"
-        android:backgroundTint="@color/colorPrimaryDark"
+        android:background="@drawable/screen_border"
         android:layout_below="@+id/editTextValorPontos"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

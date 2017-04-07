@@ -23,21 +23,20 @@
         android:textSize="20sp" />
 
 
-
     <Button
         android:id="@+id/buttonAtualizarEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
         android:layout_marginBottom="66dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/screen_border"
         android:onClick="atualizarSenha"
         android:text="Atualizar Senha"
-        android:textColor="#fff"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:textColor="#fff" />
 
     <EditText
         android:id="@+id/editTextAlterEmailAtual"

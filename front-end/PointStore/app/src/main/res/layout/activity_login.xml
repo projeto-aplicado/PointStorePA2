@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
@@ -11,16 +12,20 @@
     tools:context="br.com.pointstore.util.Login">
 
 
-    <TextView
-        android:id="@+id/textViewTituloLogin"
+    <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"
-        android:layout_marginBottom="47dp"
-        android:layout_above="@+id/editTextLogin"
-        android:layout_centerHorizontal="true" />
+        app:srcCompat="@drawable/pointstorelogo"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/buttonCadastrar"
+        android:layout_alignEnd="@+id/buttonCadastrar"
+        android:layout_alignBottom="@+id/editTextLogin"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="38dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -43,64 +48,54 @@
         android:ems="10"
         android:id="@+id/editTextSenha"
         android:hint="Senha"
-        android:layout_above="@+id/buttonCancelar"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="46dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/buttonCadastrar"
-        android:layout_width="match_parent"
+        style="?attr/autoCompleteTextViewStyle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="43dp"
+        android:layout_toEndOf="@+id/button"
+        android:layout_toRightOf="@+id/button"
         android:onClick="cadastrarUsuario"
         android:text="Cadastre-se"
-        android:textColor="@android:color/white"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="51dp" />
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:onClick="alterarSenha"
-        android:text="Esqueceu sua senha?"
-        android:textColor="@android:color/white"
-        android:layout_above="@+id/buttonCadastrar"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="30dp" />
-
-    <Button
-        android:id="@+id/buttonCancelar"
+        style="?attr/autoCompleteTextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/buttonLogin"
-        android:layout_alignBottom="@+id/buttonLogin"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="37dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="Cancelar"
-        android:textColor="@android:color/white" />
+        android:layout_alignBaseline="@+id/buttonCadastrar"
+        android:layout_alignBottom="@+id/buttonCadastrar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="48dp"
+        android:layout_marginStart="48dp"
+        android:onClick="alterarSenha"
+        android:text="Esqueceu sua Senha ?"
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
 
     <Button
         android:id="@+id/buttonLogin"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:layout_above="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/screen_border"
         android:onClick="logar"
         android:text="Login"
-        android:textColor="@android:color/white"
-        android:layout_marginRight="27dp"
-        android:layout_marginEnd="27dp"
-        android:layout_above="@+id/button"
-        android:layout_toLeftOf="@+id/textViewTituloLogin"
-        android:layout_toStartOf="@+id/textViewTituloLogin"
-        android:layout_marginBottom="41dp" />
+        android:textColor="@android:color/white" />
+
 </RelativeLayout>

@@ -30,7 +30,7 @@
         android:onClick="cadastrarPontos"
         android:textColor="#fff"
         android:textColorHint="@color/colorPrimary"
-        android:backgroundTint="@color/colorPrimaryDark"
+        android:background="@drawable/screen_border"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
