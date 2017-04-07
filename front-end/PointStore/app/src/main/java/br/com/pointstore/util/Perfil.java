@@ -1,5 +1,6 @@
 package br.com.pointstore.util;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,6 +12,10 @@ import android.widget.EditText;
 import br.com.pointstore.R;
 import br.com.pointstore.model.Usuario;
 import rest.LoginService;
+import rest.UsuarioService;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
@@ -22,6 +27,7 @@ public class Perfil extends AppCompatActivity {
     private EditText editTextCPF;
     private EditText editTextLogin;
     private EditText editTextSenha;
+    private UsuarioService mUsuarioService;
     private Usuario usuario;
 
 
@@ -48,24 +54,51 @@ public class Perfil extends AppCompatActivity {
 
     private void atualizarPerfil(){
 
-        if (editTextNome.getText().length() <= 0){
-            editTextNome.setError("Campo nome é obrigatório");
+        if((this.editTextNome.getText().length() > 0) && (this.editTextSobrenome.getText().length() > 0) &&
+
+                (this.editTextEmail.getText().length() > 0)&& (this.editTextCPF.getText().length() > 0)&&
+
+                (this.editTextLogin.getText().length()> 0) && (this.editTextSenha.getText().length() > 0)){
+
+            Call<Usuario> userCall = mUsuarioService.updateUser(this.usuario);
+            userCall.enqueue(new Callback<Usuario>() {
+                @Override
+                public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+
+
+                }
+
+                @Override
+                public void onFailure(Call<Usuario> call, Throwable t) {
+
+
+                }
+            });
+
+            Intent telaDeLogin = new Intent(this, Login.class);
+            startActivity(telaDeLogin);
+
+        }else{
+            if (editTextNome.getText().length() <= 0){
+                editTextNome.setError("Campo nome é obrigatório");
+            }
+            if (editTextSobrenome.getText().length() <= 0){
+                editTextSobrenome.setError("Campo sobrenome é obrigatório");
+            }
+            if (editTextEmail.getText().length() <= 0){
+                editTextEmail.setError("Campo email é obrigatório");
+            }
+            if (editTextCPF.getText().length() <= 0){
+                editTextCPF.setError("Campo cpf é obrigatório");
+            }
+            if (editTextLogin.getText().length() <= 0){
+                editTextLogin.setError("Campo login é obrigatório");
+            }
+            if (editTextSenha.getText().length() <= 0){
+                editTextSenha.setError("Campo senha é obrigatório");
+            }
         }
-        if (editTextSobrenome.getText().length() <= 0){
-            editTextSobrenome.setError("Campo sobrenome é obrigatório");
-        }
-        if (editTextEmail.getText().length() <= 0){
-            editTextEmail.setError("Campo email é obrigatório");
-        }
-        if (editTextCPF.getText().length() <= 0){
-            editTextCPF.setError("Campo cpf é obrigatório");
-        }
-        if (editTextLogin.getText().length() <= 0){
-            editTextLogin.setError("Campo login é obrigatório");
-        }
-        if (editTextSenha.getText().length() <= 0){
-            editTextSenha.setError("Campo senha é obrigatório");
-        }
+
     }
 
 
