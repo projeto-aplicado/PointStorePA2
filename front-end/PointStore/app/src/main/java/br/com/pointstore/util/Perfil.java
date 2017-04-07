@@ -48,6 +48,19 @@ public class Perfil extends AppCompatActivity {
             }
         });
 
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://10.0.2.2:8080/")
+                .addConverterFactory(JacksonConverterFactory.create())
+                .build();
+
+        this.mUsuarioService = retrofit.create(UsuarioService.class);
+
+        this.editTextNome = (EditText) findViewById(R.id.editTextNome);
+        this.editTextSobrenome = (EditText) findViewById(R.id.editTextSobrenome);
+        this.editTextEmail = (EditText) findViewById(R.id.editTextAttEmail);
+        this.editTextCPF = (EditText) findViewById(R.id.editTextAttCPF);
+        this.editTextLogin = (EditText) findViewById(R.id.editTextAttUsuario);
+        this.editTextSenha = (EditText) findViewById(R.id.editTextAttSenha);
 
 
     }
