@@ -1,5 +1,6 @@
 package br.com.pointstore;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import br.com.pointstore.util.CadastrarPontos;
+import br.com.pointstore.util.CadastrarUsuario;
+import br.com.pointstore.util.CadastroTenhoInteresse;
+import br.com.pointstore.util.Perfil;
 
 public class ListarAnunciosActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -80,19 +86,17 @@ public class ListarAnunciosActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_meuperfil) {
+            Intent meuPerfil = new Intent(this, Perfil.class);
+            startActivity(meuPerfil);
+        } else if (id == R.id.nav_meuspontos) {
+            Intent cadastroPontos = new Intent(this, CadastrarPontos.class);
+            startActivity(cadastroPontos);
+        } else if (id == R.id.nav_tenhointeresse) {
+            Intent cadastroTenhoInteresse = new Intent(this, CadastroTenhoInteresse.class);
+            startActivity(cadastroTenhoInteresse);
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

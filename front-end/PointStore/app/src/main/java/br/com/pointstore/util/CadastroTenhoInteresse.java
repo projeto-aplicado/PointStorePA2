@@ -32,7 +32,7 @@ public class CadastroTenhoInteresse extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastrar_usuario);
+        setContentView(R.layout.activity_cadastro_tenho_interesse);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://10.0.2.2:8080/")
