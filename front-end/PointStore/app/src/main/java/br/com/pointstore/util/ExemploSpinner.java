@@ -5,6 +5,7 @@ package br.com.pointstore.util;
  */
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import java.util.List;
 import java.util.ArrayList;
 
+import br.com.pointstore.ListarAnunciosActivity;
 import br.com.pointstore.R;
 
 public class ExemploSpinner extends Activity {
@@ -59,6 +61,13 @@ public class ExemploSpinner extends Activity {
             }
         });
 
+    }
+
+
+
+    public void qualificarUser (View view) {
+        Intent qualificaruser = new Intent(this, QualificarUsuario.class);
+        startActivity(qualificaruser);
     }
 
 }

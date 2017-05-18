@@ -24,6 +24,7 @@
         <activity android:name=".util.CadastrarVendas" />
         <activity android:name=".util.ExemploSpinner" />
         <activity android:name=".util.ListarPontos" />
+        <activity android:name=".util.QualificarUsuario" />
 
 
         <activity android:name=".MainActivity" />

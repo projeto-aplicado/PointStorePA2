@@ -59,11 +59,11 @@
                 android:textSize="18sp"
                 tools:ignore="RtlHardcoded"
                 android:layout_alignParentTop="true"
-                android:layout_alignLeft="@+id/usuarioHeaderText"
-                android:layout_alignStart="@+id/usuarioHeaderText" />
+                android:layout_alignLeft="@+id/emailText"
+                android:layout_alignStart="@+id/emailText" />
 
             <TextView
-                android:id="@+id/usuarioHeaderText"
+                android:id="@+id/emailText"
                 style="@style/Base.TextAppearance.AppCompat.Subhead"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
                 android:text="70 milhas por R$ 50,00"
                 android:textColor="#737078"
                 android:textSize="14sp"
-                android:layout_below="@+id/usuarioHeaderText"
+                android:layout_below="@+id/emailText"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_toRightOf="@+id/appImagem"
@@ -102,6 +102,7 @@
                 android:layout_below="@id/ValorText"
                 android:background="@color/colorAccent"
                 android:text="Comprar"
+                android:onClick="finalizarCompra"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -182,6 +183,7 @@
             android:layout_below="@id/ValorText2"
             android:background="@color/colorAccent"
             android:text="Comprar"
+            android:onClick="finalizarCompra"
             android:textColor="#FFFFFF"
             android:textSize="14sp"
             android:textStyle="bold" />
