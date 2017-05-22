@@ -15,9 +15,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import br.com.pointstore.util.CadastrarPontos;
-import br.com.pointstore.util.CadastrarUsuario;
 import br.com.pointstore.util.CadastrarVendas;
 import br.com.pointstore.util.CadastroTenhoInteresse;
+import br.com.pointstore.util.FinalizarCompra;
+import br.com.pointstore.util.ListarPontos;
 import br.com.pointstore.util.Perfil;
 
 public class ListarAnunciosActivity extends AppCompatActivity
@@ -91,14 +92,20 @@ public class ListarAnunciosActivity extends AppCompatActivity
             Intent meuPerfil = new Intent(this, Perfil.class);
             startActivity(meuPerfil);
         } else if (id == R.id.nav_meuspontos) {
-            Intent cadastroPontos = new Intent(this, CadastrarPontos.class);
-            startActivity(cadastroPontos);
+            Intent listarPontos = new Intent(this, ListarPontos.class);
+            startActivity(listarPontos);
         } else if (id == R.id.nav_tenhointeresse) {
             Intent cadastroTenhoInteresse = new Intent(this, CadastroTenhoInteresse.class);
             startActivity(cadastroTenhoInteresse);
         }else if (id == R.id.nav_cadastrarvendas) {
             Intent cadastrarVendas = new Intent(this, CadastrarVendas.class);
             startActivity(cadastrarVendas);
+        } else if (id == R.id.nav_finalizarcompra) {
+            Intent finalizarCompra = new Intent(this, FinalizarCompra.class);
+            startActivity(finalizarCompra);
+        } else if (id == R.id.nav_cadastrarpontos) {
+            Intent cadastrarPontos = new Intent(this, CadastrarPontos.class);
+            startActivity(cadastrarPontos);
         }
 
 
@@ -106,4 +113,10 @@ public class ListarAnunciosActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void finalizarCompra (View view) {
+        Intent finalizarcompra = new Intent(this, FinalizarCompra.class);
+        startActivity(finalizarcompra);
+    }
+
 }
