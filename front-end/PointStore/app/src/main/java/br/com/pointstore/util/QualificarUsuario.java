@@ -1,6 +1,8 @@
 package br.com.pointstore.util;
 
 import android.app.Activity;
+import android.content.Context;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -46,13 +48,46 @@ class QualificarUsuario extends AppCompatActivity {
         BtnAvaliar = (Button) findViewById(R.id.BtnAvaliar);
 
 
+        BtnAvaliar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Snackbar mySnackbar = Snackbar.make( v,
+                  //      "Obrigado pela Avaliação!", Snackbar.LENGTH_SHORT);
+                //mySnackbar.show();
+
+                Toast.makeText(QualificarUsuario.this, "Obrigado pela Avaliação!", Toast.LENGTH_SHORT).show();
+
+                Intent listaranuncio = new Intent(QualificarUsuario.this, ListarAnunciosActivity.class);
+                startActivity(listaranuncio);
+
+            }
+
+        });
+
     }
 
-    public void listarAnuncio(View view){
-      Intent listaranuncio = new Intent(this, ListarAnunciosActivity.class);
+    public void onClick(View view) {
+        Intent listaranuncio = new Intent(this, ListarAnunciosActivity.class);
         startActivity(listaranuncio);
-     }
+    }
+
+    public void listarAnuncio (View view){
+        Intent listaranuncio = new Intent(this, ListarAnunciosActivity.class);
+        startActivity(listaranuncio);
+    }
 
 }
+
+
+
+
+
+
+    //public void listarAnuncio(View view){
+      //Intent listaranuncio = new Intent(this, ListarAnunciosActivity.class);
+        //startActivity(listaranuncio);
+     //}
+
+
 
 
