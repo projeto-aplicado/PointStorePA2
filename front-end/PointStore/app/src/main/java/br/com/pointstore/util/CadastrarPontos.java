@@ -1,11 +1,13 @@
 package br.com.pointstore.util;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
+import br.com.pointstore.ListarAnunciosActivity;
 import br.com.pointstore.R;
 import br.com.pointstore.model.Usuario;
 import rest.UsuarioService;
@@ -81,6 +83,11 @@ public class CadastrarPontos extends AppCompatActivity {
 
         }
 
+    }
+
+    public void listarAnuncio (View view){
+        Intent listaranuncio = new Intent(this, ListarAnunciosActivity.class);
+        startActivity(listaranuncio);
     }
 
 
