@@ -15,10 +15,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import br.com.pointstore.util.CadastrarPontos;
-import br.com.pointstore.util.CadastrarUsuario;
 import br.com.pointstore.util.CadastrarVendas;
 import br.com.pointstore.util.CadastroTenhoInteresse;
-import br.com.pointstore.util.ExemploSpinner;
+import br.com.pointstore.util.FinalizarCompra;
 import br.com.pointstore.util.ListarPontos;
 import br.com.pointstore.util.Perfil;
 
@@ -102,7 +101,7 @@ public class ListarAnunciosActivity extends AppCompatActivity
             Intent cadastrarVendas = new Intent(this, CadastrarVendas.class);
             startActivity(cadastrarVendas);
         } else if (id == R.id.nav_finalizarcompra) {
-            Intent finalizarCompra = new Intent(this, ExemploSpinner.class);
+            Intent finalizarCompra = new Intent(this, FinalizarCompra.class);
             startActivity(finalizarCompra);
         } else if (id == R.id.nav_cadastrarpontos) {
             Intent cadastrarPontos = new Intent(this, CadastrarPontos.class);
@@ -116,7 +115,7 @@ public class ListarAnunciosActivity extends AppCompatActivity
     }
 
     public void finalizarCompra (View view) {
-        Intent finalizarcompra = new Intent(this, ExemploSpinner.class);
+        Intent finalizarcompra = new Intent(this, FinalizarCompra.class);
         startActivity(finalizarcompra);
     }
 
