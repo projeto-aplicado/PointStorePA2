@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:id="@id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
@@ -99,6 +100,7 @@
         android:layout_marginTop="158dp"
         android:background="@color/colorAccent"
         android:text="Avaliar"
+        android:onClick="listarAnuncio"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         android:textStyle="bold" />

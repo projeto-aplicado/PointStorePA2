@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/buttonConfirmar"
-        android:onClick="cadastrarPontos"
+        android:onClick="listarAnuncio"
         android:textColor="#fff"
         android:textColorHint="@color/colorPrimary"
         android:background="@drawable/screen_border"

@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="251dp"
         android:id="@+id/buttonCadastrar"
-        android:onClick="cadastrarPontos"
+        android:onClick="listarAnuncio"
         android:textColor="#fff"
         android:textColorHint="@color/colorPrimary"
         android:background="@drawable/screen_border"
