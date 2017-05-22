@@ -38,7 +38,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:8080/")
+                .baseUrl("http://192.168.43.17:8080/")
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
 
@@ -56,15 +56,13 @@ public class Login extends AppCompatActivity {
 
         if ((editTextLogin.getText().length() > 0) && ((editTextSenha.getText().length() > 0))) {
 
-            if(this.editTextLogin.getText().toString().equals("romulo") && this.editTextSenha.getText().toString().equals("123")){
-                Intent listarAnuncios = new Intent(this, ListarAnunciosActivity.class);
-                startActivity(listarAnuncios);
-            }else{
                 Call<Collection<Usuario>> userLoginCall = mLoginService.logar();
                 userLoginCall.enqueue(new Callback<Collection<Usuario>>() {
                     @Override
                     public void onResponse(Call<Collection<Usuario>> call, Response<Collection<Usuario>> response) {
                         listaUsuarios.addAll(response.body());
+                        Intent listarAnuncios = new Intent(Login.this, ListarAnunciosActivity.class);
+                        startActivity(listarAnuncios);
                     }
 
                     @Override
@@ -72,7 +70,6 @@ public class Login extends AppCompatActivity {
 
                     }
                 });
-            }
 
         }else {
 
