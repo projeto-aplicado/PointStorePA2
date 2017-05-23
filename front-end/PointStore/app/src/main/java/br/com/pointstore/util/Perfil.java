@@ -51,7 +51,7 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener{
         });
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:8080/")
+                .baseUrl("http://192.168.43.17:8080/")
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
         this.mUsuarioService = retrofit.create(UsuarioService.class);
@@ -68,56 +68,6 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener{
 
 
     }
-
-
-    /*private void atualizarPerfil(){
-
-        if((this.editTextNome.getText().length() > 0) && (this.editTextSobrenome.getText().length() > 0) &&
-
-                (this.editTextEmail.getText().length() > 0)&& (this.editTextCPF.getText().length() > 0)&&
-
-                (this.editTextLogin.getText().length()> 0) && (this.editTextSenha.getText().length() > 0)){
-
-            Call<Usuario> userCall = mUsuarioService.updateUser(this.usuario);
-            userCall.enqueue(new Callback<Usuario>() {
-                @Override
-                public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-
-
-                }
-
-                @Override
-                public void onFailure(Call<Usuario> call, Throwable t) {
-
-
-                }
-            });
-
-            Intent telaDeLogin = new Intent(this, Login.class);
-            startActivity(telaDeLogin);
-
-        }else{
-            if (editTextNome.getText().length() <= 0){
-                editTextNome.setError("Campo nome é obrigatório");
-            }
-            if (editTextSobrenome.getText().length() <= 0){
-                editTextSobrenome.setError("Campo sobrenome é obrigatório");
-            }
-            if (editTextEmail.getText().length() <= 0){
-                editTextEmail.setError("Campo email é obrigatório");
-            }
-            if (editTextCPF.getText().length() <= 0){
-                editTextCPF.setError("Campo cpf é obrigatório");
-            }
-            if (editTextLogin.getText().length() <= 0){
-                editTextLogin.setError("Campo login é obrigatório");
-            }
-            if (editTextSenha.getText().length() <= 0){
-                editTextSenha.setError("Campo senha é obrigatório");
-            }
-        }
-
-    }*/
 
 
     @Override

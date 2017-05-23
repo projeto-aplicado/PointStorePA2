@@ -1,6 +1,7 @@
 package br.unifor.pointstore.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -31,22 +33,22 @@ public class Usuario implements Serializable {
 	private String login;
 	private String senha;
 	
-	@OneToOne(cascade=CascadeType.PERSIST)
+	@OneToMany(cascade=CascadeType.PERSIST)
 	@JoinColumn(name="id_meus_pontos")
-	private MeusPontos meusPontos;
+	private List<MeusPontos> meusPontos;
 	
 	
-	@OneToOne(cascade=CascadeType.PERSIST)
+	@OneToMany(cascade=CascadeType.PERSIST)
 	@JoinColumn(name="id_minhas_compras")
-	private MinhasCompras minhasCompras;
+	private List<MinhasCompras> minhasCompras;
 	
-	@OneToOne(cascade=CascadeType.PERSIST)
+	@OneToMany(cascade=CascadeType.PERSIST)
 	@JoinColumn(name="id_minhas_vendas")
-	private MinhasVendas minhasVenda;
+	private List<MinhasVendas> minhasVenda;
 	
-	@OneToOne(cascade=CascadeType.PERSIST)
+	@OneToMany(cascade=CascadeType.PERSIST)
 	@JoinColumn(name="id_minhas_qualificacoes")
-	private MinhasQualificacoes minhasQualificacoes;
+	private List<MinhasQualificacoes> minhasQualificacoes;
 	
 	
 	public Integer getIdUsuario() {
@@ -99,28 +101,28 @@ public class Usuario implements Serializable {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public MeusPontos getMeusPontos() {
+	public List<MeusPontos> getMeusPontos() {
 		return meusPontos;
 	}
-	public void setMeusPontos(MeusPontos meusPontos) {
+	public void setMeusPontos(List<MeusPontos> meusPontos) {
 		this.meusPontos = meusPontos;
 	}
-	public MinhasCompras getMinhasCompras() {
+	public List<MinhasCompras> getMinhasCompras() {
 		return minhasCompras;
 	}
-	public void setMinhasCompras(MinhasCompras minhasCompras) {
-		this.minhasCompras = minhasCompras;
+	public void setMinhasCompras(List<MinhasCompras> minhasCompras) {
+		this.minhasCompras =  minhasCompras;
 	}
-	public MinhasVendas getMinhasVenda() {
+	public List<MinhasVendas> getMinhasVenda() {
 		return minhasVenda;
 	}
-	public void setMinhasVenda(MinhasVendas minhasVenda) {
+	public void setMinhasVenda(List<MinhasVendas> minhasVenda) {
 		this.minhasVenda = minhasVenda;
 	}
-	public MinhasQualificacoes getMinhasQualificacoes() {
+	public List<MinhasQualificacoes> getMinhasQualificacoes() {
 		return minhasQualificacoes;
 	}
-	public void setMinhasQualificacoes(MinhasQualificacoes minhasQualificacoes) {
+	public void setMinhasQualificacoes(List<MinhasQualificacoes> minhasQualificacoes) {
 		this.minhasQualificacoes = minhasQualificacoes;
 	}
 	

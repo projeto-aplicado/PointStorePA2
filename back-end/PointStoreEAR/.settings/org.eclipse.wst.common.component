@@ -5,11 +5,11 @@
             <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="PointStoreClient.jar" deploy-path="/" handle="module:/resource/PointStoreClient/PointStoreClient">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <dependent-module archiveName="PointStoreWeb.war" deploy-path="/" handle="module:/resource/PointStoreWeb/PointStoreWeb">
             <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="PointStoreClient.jar" deploy-path="/lib" handle="module:/resource/PointStoreClient/PointStoreClient">
             <dependency-type>uses</dependency-type>
         </dependent-module>
     </wb-module>
