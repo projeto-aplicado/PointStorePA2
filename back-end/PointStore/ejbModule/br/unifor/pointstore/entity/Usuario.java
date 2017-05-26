@@ -50,6 +50,10 @@ public class Usuario implements Serializable {
 	@JoinColumn(name="id_minhas_qualificacoes")
 	private List<MinhasQualificacoes> minhasQualificacoes;
 	
+	@OneToMany(cascade=CascadeType.PERSIST)
+	@JoinColumn(name="id_tenho_interesse")
+	private List<Loja> tenhoInteresse;
+	
 	
 	public Integer getIdUsuario() {
 		return idUsuario;
@@ -124,6 +128,12 @@ public class Usuario implements Serializable {
 	}
 	public void setMinhasQualificacoes(List<MinhasQualificacoes> minhasQualificacoes) {
 		this.minhasQualificacoes = minhasQualificacoes;
+	}
+	public List<Loja> getTenhoInteresse() {
+		return tenhoInteresse;
+	}
+	public void setTenhoInteresse(List<Loja> tenhoInteresse) {
+		this.tenhoInteresse = tenhoInteresse;
 	}
 	
 }
