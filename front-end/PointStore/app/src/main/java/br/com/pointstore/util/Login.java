@@ -31,6 +31,7 @@ public class Login extends AppCompatActivity {
 
     private List<Usuario> listaUsuarios;
     private Usuario usuario;
+    private String TAG_I;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.43.17:8080/")
+                .baseUrl("http://192.168.15.14:8080/")
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
 
@@ -52,22 +53,27 @@ public class Login extends AppCompatActivity {
 
     public void logar(View v) {
 
-        usuario = new Usuario(editTextLogin.getText().toString(),editTextSenha.getText().toString());
+        usuario = new Usuario(null, null, null, null, null, null, editTextLogin.getText().toString(),editTextSenha.getText().toString(), null, null, null, null);
 
         if ((editTextLogin.getText().length() > 0) && ((editTextSenha.getText().length() > 0))) {
 
-                Call<Collection<Usuario>> userLoginCall = mLoginService.logar();
-                userLoginCall.enqueue(new Callback<Collection<Usuario>>() {
+                Call<Usuario> userLoginCall = mLoginService.loginUser(usuario);
+                userLoginCall.enqueue(new Callback<Usuario>() {
+
                     @Override
-                    public void onResponse(Call<Collection<Usuario>> call, Response<Collection<Usuario>> response) {
-                        listaUsuarios.addAll(response.body());
+                    public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+
+                        Usuario user = response.body();
+
+                        //listaUsuarios.addAll(response.body());
                         Intent listarAnuncios = new Intent(Login.this, ListarAnunciosActivity.class);
+                        listarAnuncios.putExtra("user", user);
                         startActivity(listarAnuncios);
                     }
 
                     @Override
-                    public void onFailure(Call<Collection<Usuario>> call, Throwable t) {
-
+                    public void onFailure(Call<Usuario> call, Throwable t) {
+                        Log.e("APP", t.getMessage());
                     }
                 });
 

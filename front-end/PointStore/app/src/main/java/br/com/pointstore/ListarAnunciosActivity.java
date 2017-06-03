@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import br.com.pointstore.model.Usuario;
 import br.com.pointstore.util.CadastrarPontos;
 import br.com.pointstore.util.CadastrarVendas;
 import br.com.pointstore.util.CadastroTenhoInteresse;
@@ -23,6 +24,8 @@ import br.com.pointstore.util.Perfil;
 
 public class ListarAnunciosActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private Usuario user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,8 @@ public class ListarAnunciosActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
     @Override
@@ -90,6 +95,8 @@ public class ListarAnunciosActivity extends AppCompatActivity
 
         if (id == R.id.nav_meuperfil) {
             Intent meuPerfil = new Intent(this, Perfil.class);
+            user = (Usuario) getIntent().getSerializableExtra("user");
+            meuPerfil.putExtra("user", user);
             startActivity(meuPerfil);
         } else if (id == R.id.nav_meuspontos) {
             Intent listarPontos = new Intent(this, ListarPontos.class);

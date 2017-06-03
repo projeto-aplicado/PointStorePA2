@@ -16,7 +16,7 @@ import retrofit2.http.Path;
 
 public interface LoginService {
 
-    @POST("/PointStoreWeb/rest/usuario")
+    @POST("/PointStoreWeb/rest/usuarioLogin")
     Call<Usuario> loginUser(@Body Usuario usuario);
 
     @GET("/PointStoreWeb/rest/usuarioLogin")

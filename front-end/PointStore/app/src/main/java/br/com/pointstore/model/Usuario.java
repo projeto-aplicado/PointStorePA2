@@ -1,13 +1,19 @@
 package br.com.pointstore.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
 
 /**
  * Created by FabricioMelo on 11/03/2017.
  */
 
-public class Usuario {
+public class Usuario implements Serializable {
 
+    private Integer idUsuario;
     private String nome;
     private String sobrenome;
     private String cpf;
@@ -15,6 +21,11 @@ public class Usuario {
     private String email;
     private String login;
     private String senha;
+
+    private MeusPontos meusPontos;
+    private MinhasCompras minhasCompras;
+    private MinhasVendas minhasVenda;
+    private MinhasQualificacoes minhasQualificacoes;
 
     public Usuario() {
 
@@ -35,6 +46,33 @@ public class Usuario {
         this.login = login;
         this.senha = senha;
     }
+
+    public Usuario(Integer idUsuario, String nome, String sobrenome, String credito, String email, String cpf, String login, String senha, MeusPontos meusPontos, MinhasCompras minhasCompras, MinhasVendas minhasVenda, MinhasQualificacoes minhasQualificacoes) {
+
+        this.idUsuario = idUsuario;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.cpf = cpf;
+        this.credito = credito;
+        this.email = email;
+        this.login = login;
+        this.senha = senha;
+        this.meusPontos = meusPontos;
+        this.minhasCompras = minhasCompras;
+        this.minhasVenda = minhasVenda;
+        this.minhasQualificacoes = minhasQualificacoes;
+    }
+
+    protected Usuario(Parcel in) {
+        nome = in.readString();
+        sobrenome = in.readString();
+        cpf = in.readString();
+        credito = in.readString();
+        email = in.readString();
+        login = in.readString();
+        senha = in.readString();
+    }
+
 
     public String getNome() {
         return nome;
@@ -91,4 +129,45 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public Integer getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public MeusPontos getMeusPontos() {
+        return meusPontos;
+    }
+
+    public void setMeusPontos(MeusPontos meusPontos) {
+        this.meusPontos = meusPontos;
+    }
+
+    public MinhasCompras getMinhasCompras() {
+        return minhasCompras;
+    }
+
+    public void setMinhasCompras(MinhasCompras minhasCompras) {
+        this.minhasCompras = minhasCompras;
+    }
+
+    public MinhasVendas getMinhasVenda() {
+        return minhasVenda;
+    }
+
+    public void setMinhasVenda(MinhasVendas minhasVenda) {
+        this.minhasVenda = minhasVenda;
+    }
+
+    public MinhasQualificacoes getMinhasQualificacoes() {
+        return minhasQualificacoes;
+    }
+
+    public void setMinhasQualificacoes(MinhasQualificacoes minhasQualificacoes) {
+        this.minhasQualificacoes = minhasQualificacoes;
+    }
+
 }

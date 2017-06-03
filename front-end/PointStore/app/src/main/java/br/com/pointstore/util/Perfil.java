@@ -51,7 +51,7 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener{
         });
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.43.17:8080/")
+                .baseUrl("http://192.168.15.14:8080/")
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
         this.mUsuarioService = retrofit.create(UsuarioService.class);
@@ -66,7 +66,18 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener{
         this.btnAtualizar = (Button) findViewById(R.id.buttonAtualizar);
         this.btnAtualizar.setOnClickListener(this);
 
+        usuario = (Usuario) getIntent().getSerializableExtra("user");
 
+
+
+        this.editTextNome.setText(usuario.getNome());
+
+
+    }
+
+
+    public void setarValorInputs(){
+        //this.editTextNome.setText();
     }
 
 
