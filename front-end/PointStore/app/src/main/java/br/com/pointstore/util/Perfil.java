@@ -68,9 +68,12 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener{
 
         usuario = (Usuario) getIntent().getSerializableExtra("user");
 
-
-
         this.editTextNome.setText(usuario.getNome());
+        this.editTextSobrenome.setText(usuario.getSobrenome());
+        this.editTextEmail.setText(usuario.getEmail());
+        this.editTextLogin.setText(usuario.getLogin());
+        this.editTextSenha.setText(usuario.getSenha());
+        this.editTextCPF.setText(usuario.getCpf());
 
 
     }
