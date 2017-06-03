@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -79,36 +80,31 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener{
     }
 
 
-    public void setarValorInputs(){
-        //this.editTextNome.setText();
-    }
-
-
     @Override
     public void onClick(View v) {
+
+        usuario = new Usuario(usuario.getIdUsuario(), this.editTextNome.getText().toString(), this.editTextSobrenome.getText().toString(), null, this.editTextEmail.getText().toString(), this.editTextCPF.getText().toString(), this.editTextLogin.getText().toString(), this.editTextSenha.getText().toString(), null, null, null, null);
+
         if((this.editTextNome.getText().length() > 0) && (this.editTextSobrenome.getText().length() > 0) &&
 
                 (this.editTextEmail.getText().length() > 0)&& (this.editTextCPF.getText().length() > 0)&&
 
-                (this.editTextLogin.getText().length()> 0) && (this.editTextSenha.getText().length() > 0)){
+                (this.editTextLogin.getText().length() > 0) && (this.editTextSenha.getText().length() > 0) &&
+
+                (this.editTextCPF.getText().length() > 0)){
 
             Call<Usuario> userCall = mUsuarioService.updateUser(this.usuario);
             userCall.enqueue(new Callback<Usuario>() {
                 @Override
                 public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-
-
+                    
                 }
 
                 @Override
                 public void onFailure(Call<Usuario> call, Throwable t) {
-
-
+                    Log.e("APP", t.getMessage());
                 }
             });
-
-            Intent telaDeLogin = new Intent(this, Login.class);
-            startActivity(telaDeLogin);
 
         }else{
             if (editTextNome.getText().length() <= 0){
@@ -129,6 +125,10 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener{
             if (editTextSenha.getText().length() <= 0){
                 editTextSenha.setError("Campo senha é obrigatório");
             }
+            if (editTextCPF.getText().length() <= 0){
+                editTextCPF.setError("Campo cpf é obrigatório");
+            }
+
         }
     }
 }

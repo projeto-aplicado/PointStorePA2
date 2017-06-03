@@ -65,10 +65,10 @@ public class Login extends AppCompatActivity {
 
                         Usuario user = response.body();
 
-                        //listaUsuarios.addAll(response.body());
                         Intent listarAnuncios = new Intent(Login.this, ListarAnunciosActivity.class);
                         listarAnuncios.putExtra("user", user);
                         startActivity(listarAnuncios);
+
                     }
 
                     @Override
