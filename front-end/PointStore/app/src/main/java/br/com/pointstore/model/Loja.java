@@ -1,7 +1,5 @@
 package br.com.pointstore.model;
 
-<<<<<<< HEAD
-
 
 public class Loja{
 	
@@ -23,14 +21,3 @@ public class Loja{
 	}
 	
 }
-=======
-/**
- * Created by Juan on 26/05/2017.
- */
-
-public class Loja {
-
-    private Integer idLoja;
-    private String nome;
-}
->>>>>>> af6a540a9e1d6be63243323dbc914d214e8cfc80
