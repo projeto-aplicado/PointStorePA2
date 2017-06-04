@@ -20,6 +20,7 @@ import br.com.pointstore.util.CadastrarVendas;
 import br.com.pointstore.util.CadastroTenhoInteresse;
 import br.com.pointstore.util.FinalizarCompra;
 import br.com.pointstore.util.ListarPontos;
+import br.com.pointstore.util.Login;
 import br.com.pointstore.util.Perfil;
 
 public class ListarAnunciosActivity extends AppCompatActivity
@@ -113,6 +114,9 @@ public class ListarAnunciosActivity extends AppCompatActivity
         } else if (id == R.id.nav_cadastrarpontos) {
             Intent cadastrarPontos = new Intent(this, CadastrarPontos.class);
             startActivity(cadastrarPontos);
+        } else if (id == R.id.nav_sair) {
+            Intent sair = new Intent(this, Login.class);
+            startActivity(sair);
         }
 
 
