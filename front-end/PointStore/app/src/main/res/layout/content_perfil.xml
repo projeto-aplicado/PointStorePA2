@@ -117,7 +117,7 @@
         android:layout_below="@+id/editTextAttSenha"
         android:layout_marginTop="18dp"
         android:hint="CPF"
-        android:inputType="textPassword" />
+        android:inputType="text|number" />
 
 
 
