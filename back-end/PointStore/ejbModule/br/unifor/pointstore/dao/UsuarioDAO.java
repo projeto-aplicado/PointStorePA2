@@ -79,7 +79,12 @@ public class UsuarioDAO {
 		Usuario usuarioDetached = (Usuario) this.entityManager.createQuery("SELECT user from Usuario user where user.login = :login and user.senha = :senha")
 				  .setParameter("login", userLogin.getLogin() ).setParameter("senha", userLogin.getSenha()).getSingleResult();
 		
+		
+		System.out.println("usuario: " + userLogin.getLogin() + " senha: " + userLogin.getSenha());
+		
+		
 		return usuarioDetached;
 	}
+	
 	
 }

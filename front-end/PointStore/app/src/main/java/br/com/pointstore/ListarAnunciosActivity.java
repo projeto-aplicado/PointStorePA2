@@ -13,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import br.com.pointstore.model.Usuario;
 import br.com.pointstore.util.CadastrarPontos;
@@ -26,6 +28,7 @@ public class ListarAnunciosActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Usuario user;
+    private TextView userLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,9 @@ public class ListarAnunciosActivity extends AppCompatActivity
             }
         });
 
+        //this.userLogin = (TextView) findViewById(R.id.textViewLogin);
+        //this.userLogin.setText(user.getLogin());
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -51,6 +57,8 @@ public class ListarAnunciosActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
 
 
     }
@@ -92,10 +100,10 @@ public class ListarAnunciosActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        user = (Usuario) getIntent().getSerializableExtra("user");
 
         if (id == R.id.nav_meuperfil) {
             Intent meuPerfil = new Intent(this, Perfil.class);
-            user = (Usuario) getIntent().getSerializableExtra("user");
             meuPerfil.putExtra("user", user);
             startActivity(meuPerfil);
         } else if (id == R.id.nav_meuspontos) {

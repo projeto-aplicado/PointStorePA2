@@ -23,12 +23,12 @@
         app:srcCompat="@drawable/pointstorelogo1" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.02"
-        android:text="@string/textView"
         android:textColor="@color/colorAccent"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:text="@string/textView" />
 
 </LinearLayout>

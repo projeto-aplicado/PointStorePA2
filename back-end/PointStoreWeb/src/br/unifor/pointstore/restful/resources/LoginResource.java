@@ -26,7 +26,6 @@ public class LoginResource {
     private UsuarioBeanRemote usuarioBeanRemote;
 	
 	
-	
 	private Usuario montarUsuario(UsuarioVO userVO) {
 
         Usuario user = new Usuario();

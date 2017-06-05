@@ -15,6 +15,8 @@ public class UsuarioVO {
 	private String email;
 	private String login;
 	private String senha;
+	
+
 	private MeusPontos meusPontos;
 	private MinhasCompras minhasCompras;	
 	private MinhasVendas minhasVenda;	
