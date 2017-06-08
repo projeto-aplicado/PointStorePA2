@@ -9,6 +9,8 @@ import android.widget.EditText;
 
 import br.com.pointstore.ListarAnunciosActivity;
 import br.com.pointstore.R;
+import br.com.pointstore.model.Loja;
+import br.com.pointstore.model.MeusPontos;
 import br.com.pointstore.model.Usuario;
 import rest.UsuarioService;
 import retrofit2.Call;
@@ -28,6 +30,8 @@ public class CadastrarPontos extends AppCompatActivity {
 
     private UsuarioService mUsuarioService;
     private Usuario usuario;
+    private MeusPontos meusPontos;
+    private Loja loja;
 
 
     @Override
@@ -52,9 +56,15 @@ public class CadastrarPontos extends AppCompatActivity {
 
     public void cadastrarPontos (View v) {
 
-        //usuario = new Usuario(editTextTipoPontos.getText().toString(),editTextQtdPontos.getText().toString(),"3");
+        usuario = (Usuario) getIntent().getSerializableExtra("user");
+
+        //loja = (Loja)this.editTextTipoPontos.getText().toString();
+
+        meusPontos = new MeusPontos(editTextTipoPontos.getText().toString(),editTextQtdPontos.getText().toString());
 
         if ((editTextTipoPontos.getText().length() > 0) && (editTextQtdPontos.getText().length() > 0) ){
+            Intent cadastrarPontos = new Intent(this, ListarAnunciosActivity.class);
+            startActivity(cadastrarPontos);
 
             Call<Usuario> userCall = mUsuarioService.createUser(usuario);
             userCall.enqueue(new Callback<Usuario>() {
