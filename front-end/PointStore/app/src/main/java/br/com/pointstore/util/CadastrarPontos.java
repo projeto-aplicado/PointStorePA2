@@ -60,7 +60,7 @@ public class CadastrarPontos extends AppCompatActivity {
 
         //loja = (Loja)this.editTextTipoPontos.getText().toString();
 
-        meusPontos = new MeusPontos(editTextTipoPontos.getText().toString(),editTextQtdPontos.getText().toString());
+        //meusPontos = new MeusPontos(editTextTipoPontos.getText().toString(),editTextQtdPontos.getText().toString());
 
         if ((editTextTipoPontos.getText().length() > 0) && (editTextQtdPontos.getText().length() > 0) ){
             Intent cadastrarPontos = new Intent(this, ListarAnunciosActivity.class);

@@ -7,14 +7,6 @@ public class MeusPontos{
 	private String quantidade;
 	private Loja loja;
 
-	public MeusPontos (Loja Loja, String quantidade) {
-		this.loja = loja;
-		this.quantidade = quantidade;
-	}
-
-	public MeusPontos(String s, String s1) {
-	}
-
 
 	public Integer getIdMeusPontos() {
 		return idMeusPontos;
